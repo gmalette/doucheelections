@@ -14,6 +14,15 @@ config :doucheracer, Doucheracer.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../", __DIR__)]]
 
+config :extwitter, :oauth, [
+   consumer_key: "",
+   consumer_secret: "",
+   access_token: "",
+   access_token_secret: ""
+]
+
+config :redix,
+  url: "redis://doucheracer.railgun:6379"
 
 # Watch static and templates for browser reloading.
 config :doucheracer, Doucheracer.Endpoint,
@@ -32,3 +41,5 @@ config :logger, :console, format: "[$level] $message\n"
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
+
+import_config "dev.secret.exs"

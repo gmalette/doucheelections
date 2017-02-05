@@ -16,8 +16,18 @@ defmodule Doucheracer.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Doucheracer, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext]]
+    [
+      mod: {Doucheracer, []},
+      applications: [
+        :phoenix,
+        :phoenix_pubsub,
+        :phoenix_html,
+        :cowboy,
+        :logger,
+        :gettext,
+        :extwitter,
+      ]
+    ]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,6 +46,7 @@ defmodule Doucheracer.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:extwitter, "~> 0.8"},
+      {:redix, ">= 0.0.0"},
     ]
   end
 end

@@ -1,0 +1,46 @@
+/* This file is for your main application css. */
+
+$color-first: #1AC88F;
+$color-second: #18CABE;
+$color-third: #E64759;
+
+body {
+  padding-top: 50px;
+  background-color: #252831;
+  color: #ABABAB;
+}
+
+.candidates-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidate {
+  display: flex;
+  flex-direction: row;
+  .profile-picture {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    clip-path: circle(60px at center);
+  }
+  .vote-bar {
+    border: 0;
+    display: block;
+    height: 30px;
+    width: 500px;
+  }
+}
+
+.candidate:nth-child(1) .vote-bar {
+  background-color: $color-first;
+}
+
+.candidate:nth-child(2) .vote-bar {
+  background-color: $color-second;
+}
+
+.candidate:nth-child(3) .vote-bar {
+  background-color: $color-third;
+}
+

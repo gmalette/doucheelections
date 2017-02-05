@@ -11,7 +11,7 @@ defmodule Doucheracer do
       # Start the endpoint when the application starts
       supervisor(Doucheracer.Endpoint, []),
       # Start your own worker by calling: Doucheracer.Worker.start_link(arg1, arg2, arg3)
-      # worker(Doucheracer.Worker, [arg1, arg2, arg3]),
+      worker(Doucheracer.TwitterUpdate, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

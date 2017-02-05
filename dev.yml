@@ -1,0 +1,30 @@
+---
+name: doucheracer
+up:
+  - node: v5.7.0
+  - homebrew:
+    - erlang
+    - elixir
+  - railgun
+  - custom:
+      name: "Install deps"
+      met?: 'mix deps | (! grep "dependency" > /dev/null)'
+      meet: "mix do deps.get,deps.compile"
+commands:
+  test:
+    run: mix test
+  start:
+    run:
+
+railgun:
+  image: dev:railgun-common-services-0.2.x
+  services:
+    redis: 6379
+  ip_address: 192.168.64.12
+  memory: 2G
+  cores: 1
+  disk: 512M
+  proxy:
+
+packages:
+  - git@github.com:Shopify/dev-shopify.git

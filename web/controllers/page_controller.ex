@@ -11,6 +11,8 @@ defmodule Doucheracer.PageController do
       )
       |> IO.inspect
 
+    Redix.stop(redix_conn)
+
     score_sum = scores
       |> Enum.map(fn({login, score}) -> score end)
       |> Enum.sum
